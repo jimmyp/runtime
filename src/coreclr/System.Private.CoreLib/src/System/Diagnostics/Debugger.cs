@@ -32,8 +32,8 @@ namespace System.Diagnostics
 
         // Do not inline the slow path
         [MethodImpl(MethodImplOptions.NoInlining)]
-        private static void NotifyOfCrossThreadDependencySlow() =>
-            CustomNotification(new CrossThreadDependencyNotification());
+        private static void NotifyOfCrossThreadDependencySlow() { } // =>
+                                                                    // CustomNotification(new CrossThreadDependencyNotification());
 
         // Sends a notification to the debugger to indicate that execution is about to enter a path
         // involving a cross thread dependency. A debugger that has opted into this type of notification
